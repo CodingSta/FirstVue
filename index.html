@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+        <div id="app">
+            <span v-if="seen">{{ message }}</span>
+            <button v-on:click="reverseMessage">Reverse Message</button>
+            <bluebutton></bluebutton>
+            <a href='https://hsdengine02.azurewebsites.net'>HSD Engine 2</a>
+            <p>{{ nameA }}</p>
+            
+            <input v-model="nameB">
+
+            <ol>
+                <li v-for="item in myArray">
+                    {{ item.text }}
+                </li>
+            </ol>
+
+            <ol>
+                <li v-for="item in myArray"
+                     v-bind:text="item"
+                     v-bind:id="item.id">
+                </li>
+            </ol>
+
+            <ol>
+                <todo-item></todo-item>
+            </ol>
+
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
